@@ -279,7 +279,7 @@ input_data['all roles'] = input_data.roles.apply(transform_roles_to_str)
 
 output_lists = {}
 for key in audition_lists:
-    output_lists[key] = audition_lists[key].merge(input_data[['name', 'all roles', 'Supporting role preference']], on='name', how='left')
+    output_lists[key] = audition_lists[key].merge(input_data[['name', 'all roles', 'Supporting role preference', 'accept non-auditioned role', 'ensemble']], on='name', how='left')
 
 outfile = 'audition_order'
 if os.path.exists(f"{outfile}.xlsx"):
